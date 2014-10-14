@@ -49,7 +49,7 @@ public class RadixSort {
        Scanner scan =new Scanner (System.in);
        System.out.println("Radix sort Test\n");
        int n, i;
-       System.out.println("ingrese los numeros ";
+       System.out.println("ingrese los numeros ");
        n=scan.nextInt();
        int arr[]=new int[n];
        System.out.println("\nEnter"+n+"Elementos de tipo Entero");
