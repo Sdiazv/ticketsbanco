@@ -49,15 +49,15 @@ public class RadixSort {
        Scanner scan =new Scanner (System.in);
        System.out.println("Radix sort Test\n");
        int n, i;
-       System.out.println("enter number of integer elements");
+       System.out.println("ingrese los numeros ";
        n=scan.nextInt();
        int arr[]=new int[n];
-       System.out.println("\nEnter"+n+"Integer elements");
+       System.out.println("\nEnter"+n+"Elementos de tipo Entero");
        for(i=0;i<n;i++){
            arr[i]=scan.nextInt();
        }
        sort(arr);
-       System.out.println("\nElements after sorting");
+       System.out.println("\nElementos antes de ser ordenados");
        for(i=0;i<n;i++){
            System.out.println(arr[i]);
        System.out.println();
