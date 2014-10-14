@@ -52,7 +52,7 @@ public class RadixSort {
        System.out.println("ingrese los numeros ");
        n=scan.nextInt();
        int arr[]=new int[n];
-       System.out.println("\nEnter"+n+"Elementos de tipo Entero");
+       System.out.println("\nIngrese"+n+"Elementos de tipo Entero");
        for(i=0;i<n;i++){
            arr[i]=scan.nextInt();
        }
