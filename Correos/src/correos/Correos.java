@@ -6,6 +6,10 @@
 
 package correos;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import java.util.Properties;
 
 import javax.activation.DataHandler;
@@ -23,12 +27,18 @@ import javax.mail.internet.MimeMultipart;
 
 
 public class Correos {
-    
 
     
     public static void main(String[] args) {
+        //iniciar la interfaz gráfica
+        //new FichasBancoGUI().setVisible(true);
+        //Con esto tomamos la hora y fecha del sistema 
+        Date date= new Date();
+        DateFormat hourdateFormat= new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
+        
+                
         try{
-            //Propiedades de la conexion
+            //Propinexion
             Properties props= new Properties();
             props.put("mail.smtp.host", "smtp.gmail.com");
             //props.setProperty("mail.smtp.host","smtp.gmail.com");
@@ -42,7 +52,9 @@ public class Correos {
             //Preparamos la sesion
             //Session session=Session.getDefaultInstance(props);
             BodyPart texto=new  MimeBodyPart();
-            texto.setText("texto del mensaje"+"C:\\Users\\Stephanie\\Pictures\\neko rin len.jpg");
+            texto.setText("Nombre del cliente: "+""+"\n"+
+                    " Tipo de cliente: "+""+"\n"+
+                    " fecha y hora: "+date);
             
             //se compone el adjunto con la imagen
             BodyPart adjunto= new MimeBodyPart();
@@ -66,10 +78,10 @@ public class Correos {
             message.setSubject("Ficha del Banco");
             //message.setText(
               //  "mensajito con java mail<br>"+"de los buenos"+" porque si",
-                //        "ISO-8859-1","html");
+               //         "ISO-8859-1","html");
             message.setContent(multiParte);
             
-            //lo enviamos
+           //lo enviamos
             Transport t= session.getTransport("smtp");
             t.connect("tareaprogramada.estruct@gmail.com", "tareaprogra");
             t.sendMessage(message, message.getAllRecipients());
@@ -82,7 +94,7 @@ public class Correos {
                 e.printStackTrace();
                 
                 
-       }
+      }
     }
             
 }
